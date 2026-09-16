@@ -116,7 +116,7 @@ def test_cl_008_form_key_change_increments_generation_to_two():
 
 
 def test_cl_009_extension_payload_is_opaque_and_invalid_key_rejects():
-    extension_key = "x-" + "mono" + "-gate"
+    extension_key = "x-" + "consumer" + "-gate"
     payload = {"status": "pending", "nested": [1, 2]}
     extensions = SurfaceExtensions.of({extension_key: payload})
     assert extensions.entries[extension_key] is payload
