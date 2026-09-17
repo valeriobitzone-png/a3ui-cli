@@ -20,7 +20,10 @@ It is not a product UI, not a graphical renderer, and not a copy of another A3UI
 ```bash
 git clone https://github.com/valeriobitzone-png/a3ui-cli.git
 cd a3ui-cli
-# Requirements: Python 3.11+ and pytest for the test gate
+# Requirements: Python 3.11+ and pytest for the test gate.
+# The conformance fixtures/spec are a pinned, documented sibling dependency:
+git clone https://github.com/valeriobitzone-png/a3.git ../a3
+git -C ../a3 checkout closeout-v1.0
 ```
 
 Structure: `a3ui_cli/core.py`, `a3ui_cli/render.py`, `a3ui_cli/__main__.py`, and `tests/`. The implementation has no runtime dependencies.
@@ -36,7 +39,7 @@ Expected result: tests pass; the CLI exits 0 for a valid surface and exits 1 wit
 
 ## Integrate it
 
-Use `python3 -m a3ui_cli render <surface.json>` as a textual bench for your own surfaces. Read `../a3/spec/SPEC_A3UI.md`, preserve provenance and UNKNOWN-first semantics, and keep the seven primitive catalog closed.
+Use `python3 -m a3ui_cli render <surface.json>` as a textual bench for your own surfaces. For the shared conformance inputs, keep the documented `../a3` checkout at `closeout-v1.0`; read `../a3/spec/SPEC_A3UI.md`, preserve provenance and UNKNOWN-first semantics, and keep the seven primitive catalog closed.
 
 ## License
 
